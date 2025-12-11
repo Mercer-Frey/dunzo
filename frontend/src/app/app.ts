@@ -1,12 +1,15 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  template: '<router-outlet/>',
 })
 export class App {
-  protected readonly title = signal('frontend');
+  private readonly http = inject(HttpClient);
+  constructor() {
+    this.http.get('http://localhost:3000/').subscribe(a => console.log(a));
+  }
 }

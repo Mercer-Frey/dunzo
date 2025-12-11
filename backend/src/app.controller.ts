@@ -10,19 +10,12 @@ export class AppController {
   ) {}
 
   @Get()
-  getHello(): string {
+  getHello() {
     return this.appService.getHello();
   }
 
   @Get('test-db')
-  async testDb() {
-    try {
-      const users = await this.prismaService.user.findMany();
-      console.log(users);
-      return { ok: true, count: users.length };
-    } catch (e) {
-      console.error('❌ TEST-DB ERROR:', e);
-      return { ok: false, error: String(e) };
-    }
+  testDb() {
+    return this.prismaService.user.findMany();
   }
 }
