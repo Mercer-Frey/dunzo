@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="dunzo" type="CompoundRunConfigurationType">
+    <toRun name="bd" type="docker-deploy" />
+    <toRun name="back" type="js.build_tools.npm" />
+    <toRun name="front" type="js.build_tools.npm" />
+    <method v="2" />
+  </configuration>
+</component>

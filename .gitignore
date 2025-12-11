@@ -1,19 +1,10 @@
-# Node
-node_modules/
-dist/
-
-# ENV
-.env
-
 # Docker volumes
 docker/postgres-data/
 docker/redis-data/
-
-# Prisma
-prisma/migrations/
 
 # Logs
 *.log
 logs/
 
 .idea/
+.run/
