@@ -25,6 +25,7 @@
       "@app/*": ["src/*"],
       "@modules/*": ["src/modules/*"],
       "@prisma/*": ["src/prisma/*"],
+      "@tokens/*": ["src/tokens/*"],
       "@config/*": ["config/*"]
     }
   }
