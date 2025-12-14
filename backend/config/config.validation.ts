@@ -4,6 +4,19 @@ import { plainToInstance } from 'class-transformer';
 class EnvironmentVariables {
   @IsNotEmpty()
   @IsString()
+  APP_NAME: string;
+
+  @IsNotEmpty()
+  @IsString()
+  APP_HOST: string;
+
+  @IsNotEmpty()
+  @IsInt()
+  @Min(1)
+  APP_PORT: number;
+
+  @IsNotEmpty()
+  @IsString()
   DATABASE_USER: string;
 
   @IsNotEmpty()
@@ -35,11 +48,6 @@ class EnvironmentVariables {
   @IsInt()
   @Min(1)
   REDIS_PORT: number;
-
-  @IsNotEmpty()
-  @IsInt()
-  @Min(1)
-  APP_PORT: number;
 }
 
 export function validateConfig(config: Record<string, unknown>) {

@@ -16,6 +16,7 @@ import { InfrastructureModule } from '@infrastructure/infrastructure.module';
       cache: true,
       load: [configDev, configProd]
     }),
+
     ApiModule,
     SharedModule,
     InfrastructureModule,
