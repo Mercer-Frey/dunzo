@@ -1,0 +1,13 @@
+<form (submit)="onSubmit($event)">
+    <p>
+        <label for="title">Title</label>
+        <input [field]="addTicketForm.title" id="title" type="text">
+    </p>
+    <p>
+        <label for="request">Request</label>
+        <textarea [field]="addTicketForm.request" cols="10" id="request" rows="3"></textarea>
+    </p>
+    <p>
+        <button appButton>Submit</button>
+    </p>
+</form>

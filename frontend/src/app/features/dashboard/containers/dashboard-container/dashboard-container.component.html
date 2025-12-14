@@ -1,0 +1,18 @@
+<main>
+    <div id="dashboard">
+        <app-dashboard-item [data]="dashboardItemsData().serverStatus">
+            <app-dashboard-server-status [currentStatus]="currentStatus()"></app-dashboard-server-status>
+        </app-dashboard-item>
+
+        <app-dashboard-item [data]="dashboardItemsData().traffic">
+            <app-dashboard-traffic
+                [maxTraffic]="maxTraffic()"
+                [trafficData]="trafficData()">
+            </app-dashboard-traffic>
+        </app-dashboard-item>
+
+        <app-dashboard-item [data]="dashboardItemsData().supportTickets">
+            <app-dashboard-support-tickets></app-dashboard-support-tickets>
+        </app-dashboard-item>
+    </div>
+</main>

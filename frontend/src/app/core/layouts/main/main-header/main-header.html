@@ -1,0 +1,19 @@
+<header>
+    <div id="logo">
+        <img alt="Website logo, a server" height="397" ngSrc="images/logo.png" priority width="280"/>
+    </div>
+
+    <nav>
+        <ul>
+            <li>
+                <a [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ROOT_ROUTES.DASHBOARD]" routerLinkActive="active">Home</a>
+            </li>
+            <li>
+                <a [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/', ROOT_ROUTES.MANAGEMENT]" routerLinkActive="active">Management</a>
+            </li>
+            <li>
+                <button appButton>Logout</button>
+            </li>
+        </ul>
+    </nav>
+</header>

@@ -1,0 +1,26 @@
+<article>
+    <h3>
+        <div [class]="`ticket-${ticket().status}`"></div>
+        <button (click)="onToggleDetails()">
+            <span class="text">{{ ticket().title }}</span>
+            <span>
+                @if (isDetailsVisible()) {
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m19.5 8.25-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                } @else {
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M11.47 7.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" fill-rule="evenodd"/>
+                    </svg>
+                }
+            </span>
+        </button>
+    </h3>
+
+    @if (isDetailsVisible()) {
+        <p>{{ ticket().request }}</p>
+        @if (ticket().status === TICKET_STATUS.OPEN) {
+            <p><button (click)="onMarkAsCompleted()">Mark as completed</button></p>
+        }
+    }
+</article>

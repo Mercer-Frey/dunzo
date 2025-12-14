@@ -1,0 +1,13 @@
+<div id="tickets">
+    <ul>
+        @for (ticket of tickets(); track ticket.id) {
+            <app-ticket-item [ticket]="ticket"/>
+        } @empty {
+            <p>No tickets available</p>
+        }
+    </ul>
+</div>
+
+<div id="add-ticket">
+    <app-add-ticket/>
+</div>
