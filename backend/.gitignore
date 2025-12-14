@@ -44,6 +44,7 @@ env/.env.development
 env/.env.production
 .env.production.local
 .env.local
+src/config*
 
 # temp directory
 .temp

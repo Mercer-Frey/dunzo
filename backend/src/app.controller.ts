@@ -13,12 +13,16 @@ export class AppController {
 
   @Get()
   getHello() {
-    console.log(this.configService.get<string>('DATABASE_NAME'));
     return this.appService.getHello();
   }
 
   @Get('test-db')
   testDb() {
     return this.prismaService.user.findMany();
+  }
+
+  @Get('test-env')
+  getEnv() {
+    return { env: this.configService.get<string>(`${process.env.NODE_ENV}.DATABASE_NAME`) };
   }
 }
