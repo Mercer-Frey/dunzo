@@ -22,11 +22,11 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@app/*": ["src/*"],
-      "@modules/*": ["src/modules/*"],
-      "@prisma/*": ["src/prisma/*"],
-      "@tokens/*": ["src/tokens/*"],
-      "@config/*": ["src/config/*"]
+      "@root/*": ["./src/*"],
+      "@config/*": ["./config/*"],
+      "@api/*": ["./src/api/*"],
+      "@infrastructure/*": ["./src/infrastructure/*"],
+      "@shared/*": ["./src/shared/*"],
     }
   }
 }

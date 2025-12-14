@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { PrismaModule } from '@prisma/prisma.module';
-import { AppController } from '@app/app.controller';
-import { AppService } from '@app/app.service';
-import { RedisModule } from './redis/redis.module';
-import { CacheModule } from './cache/cache.module';
+
 import configDev from '@config/config.dev';
 import configProd from '@config/config.prod';
+
+import { ApiModule } from '@api/api.module';
+import { SharedModule } from '@root/shared/shared.module';
+import { InfrastructureModule } from '@infrastructure/infrastructure.module';
 
 @Module({
   imports: [
@@ -16,11 +16,9 @@ import configProd from '@config/config.prod';
       cache: true,
       load: [configDev, configProd]
     }),
-    PrismaModule,
-    RedisModule,
-    CacheModule
+    ApiModule,
+    SharedModule,
+    InfrastructureModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
